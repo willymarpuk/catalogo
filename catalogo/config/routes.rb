@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :proveedores
+  resources :productos_detalles
+  resources :productos
   resources :marcas
   resources :modelos
   resources :categorias

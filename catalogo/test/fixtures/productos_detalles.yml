@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  precio_compra: 9.99
+  fecha_compra: 2017-07-11
+  proveedor_id: 
+  producto_id: 
+
+two:
+  precio_compra: 9.99
+  fecha_compra: 2017-07-11
+  proveedor_id: 
+  producto_id: 
