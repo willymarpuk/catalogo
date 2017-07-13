@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Precio compra:</strong>
+  <%= @producto_detalle.precio_compra %>
+</p>
+
+<p>
+  <strong>Fecha compra:</strong>
+  <%= @producto_detalle.fecha_compra %>
+</p>
+
+<p>
+  <strong>Proveedor:</strong>
+  <%= @producto_detalle.proveedor %>
+</p>
+
+<p>
+  <strong>Producto:</strong>
+  <%= @producto_detalle.producto %>
+</p>
+
+<%= link_to 'Edit', edit_producto_detalle_path(@producto_detalle) %> |
+<%= link_to 'Back', productos_detalles_path %>

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  descripcion: MyString
+  modelo_id: 
+
+two:
+  descripcion: MyString
+  modelo_id: 
