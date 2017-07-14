@@ -5,6 +5,7 @@ class ModelosController < ApplicationController
   # GET /modelos.json
   def index
     @modelos = Modelo.all
+    @modelo = Modelo.new
   end
 
   # GET /modelos/1

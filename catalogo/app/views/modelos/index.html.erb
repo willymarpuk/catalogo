@@ -1,27 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<h1>Listing Modelos</h1>
+  <h1 id="titulo_firmante"> Modelos 
+      <button type="button" class="btn btn-info btn-outline btn-circle" id="btn1">
+        <span class="glyphicon glyphicon-chevron-up" id="gbtn1"></span>
+      </button>
+  </h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Descripcion</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div id="form-toggle">
+      <%= render 'form' %>
+  </div>
 
-  <tbody>
-    <% @modelos.each do |modelo| %>
+  <table class="table table-hover table-striped">
+    <thead>
       <tr>
-        <td><%= modelo.descripcion %></td>
-        <td><%= link_to 'Show', modelo %></td>
-        <td><%= link_to 'Edit', edit_modelo_path(modelo) %></td>
-        <td><%= link_to 'Destroy', modelo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Modelos</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New Modelo', new_modelo_path %>
+    <tbody>
+      <% @modelos.each do |modelo| %>
+        <tr>
+          <td><%= modelo.descripcion %></td>
+          <td><%= link_to 'Show', modelo %></td>
+          <td><%= link_to 'Edit', edit_modelo_path(modelo) %></td>
+          <td><%= link_to 'Destroy', modelo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
