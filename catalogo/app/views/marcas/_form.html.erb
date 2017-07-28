@@ -21,7 +21,9 @@
     <div class="col-sm-12 col-lg-4">
       <div class="field">
         <%= f.label :modelo %><br>
-        <%= f.text_field :modelo_id , class: 'form-control' %>
+        <%= f.select :modelo_id,
+          options_from_collection_for_select(Modelo.all, :id, :nombre_modelo, @marca.modelo_id),
+          {prompt: 'Seleccione un modelo'}, include_blank: true, class: "form-control"%>
       </div>
     </div>
   </div>

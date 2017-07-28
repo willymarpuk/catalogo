@@ -29,10 +29,10 @@ class ModelosController < ApplicationController
 
     respond_to do |format|
       if @modelo.save
-        format.html { redirect_to @modelo, notice: 'Modelo was successfully created.' }
+        format.html { redirect_to modelos_url }
         format.json { render :show, status: :created, location: @modelo }
       else
-        format.html { render :new }
+        format.html { redirect_to modelos_url }
         format.json { render json: @modelo.errors, status: :unprocessable_entity }
       end
     end
@@ -43,7 +43,7 @@ class ModelosController < ApplicationController
   def update
     respond_to do |format|
       if @modelo.update(modelo_params)
-        format.html { redirect_to @modelo, notice: 'Modelo was successfully updated.' }
+        format.html { redirect_to modelos_url }
         format.json { render :show, status: :ok, location: @modelo }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class ModelosController < ApplicationController
   def destroy
     @modelo.destroy
     respond_to do |format|
-      format.html { redirect_to modelos_url, notice: 'Modelo was successfully destroyed.' }
+      format.html { redirect_to modelos_url }
       format.json { head :no_content }
     end
   end

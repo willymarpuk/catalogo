@@ -24,7 +24,7 @@
       <% @marcas.each do |marca| %>
         <tr>
           <td><%= marca.descripcion %></td>
-          <td><%= marca.modelo %></td>
+          <td><%= marca.modelo.nombre_modelo %></td>
           <td><%= link_to 'Show', marca %></td>
           <td><%= link_to 'Edit', edit_marca_path(marca) %></td>
           <td><%= link_to 'Destroy', marca, method: :delete, data: { confirm: 'Are you sure?' } %></td>

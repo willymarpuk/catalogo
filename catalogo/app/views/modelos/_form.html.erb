@@ -1,21 +1,11 @@
-<%= form_for(@modelo) do |f| %>
-  <% if @modelo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@modelo.errors.count, "error") %> prohibited this modelo from being saved:</h2>
-
-      <ul>
-      <% @modelo.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<% remote ||= false %>
+<%= form_for @modelo, remote: remote, validate: true do |f| %>
 
   <div class="row">
     <div class="col-sm-12 col-lg-4">
       <div class="field">
-        <%= f.label :modelo %><br>
-        <%= f.text_field :descripcion, autofocus: true , class: 'form-control' %>
+        <%= f.label :modelo, class: 'required' %><br>
+        <%= f.text_field :descripcion, autofocus: true , :class => 'form-control'  %>
       </div>
     </div>
   </div>
