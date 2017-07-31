@@ -20,6 +20,10 @@ class ProveedoresController < ApplicationController
 
   # GET /proveedores/1/edit
   def edit
+    @proveedor = Proveedor.find(params[:id])
+    respond_to do |format|
+      format.js
+    end
   end
 
   # POST /proveedores
