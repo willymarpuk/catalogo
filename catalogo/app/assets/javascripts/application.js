@@ -14,3 +14,27 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+		$("#btn1").click(function(){
+		$('#form-toggle').fadeToggle();
+		if($('#gbtn1').hasClass('glyphicon glyphicon-plus')){
+			$('#gbtn1').removeClass('glyphicon glyphicon-plus');
+			$('#gbtn1').addClass('glyphicon glyphicon-chevron-up');
+		}else{
+			$('#gbtn1').removeClass('glyphicon glyphicon-chevron-up');
+			$('#gbtn1').addClass('glyphicon glyphicon-plus');
+		}
+	});
+
+	$("#button-up").click(function(){
+		$('.subnavbar').fadeToggle();
+		if($('#button-up-icon').hasClass('glyphicon glyphicon-down')){
+			$('#button-up-icon').removeClass('glyphicon glyphicon-down');
+			$('#button-up-icon').addClass('glyphicon glyphicon-chevron-up');
+		}else{
+			$('#button-up-icon').removeClass('glyphicon glyphicon-chevron-up');
+			$('#button-up-icon').addClass('glyphicon glyphicon-down');
+		}
+	});
+});
