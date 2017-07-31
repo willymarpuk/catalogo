@@ -1,7 +1,7 @@
 <div class="container">
     <p id="notice"><%= notice %></p>
 
-    <h1 id="titulo_firmante"> Proveedores 
+    <h1 id="titulo_proveedor"> Proveedores 
       <button type="button" class="btn btn-info btn-outline btn-circle" id="btn1">
         <span class="glyphicon glyphicon-chevron-up" id="gbtn1"></span>
       </button>
@@ -15,28 +15,37 @@
       <thead>
           <tr>
               <th>Descripcion</th>
-              <th>Direccion</th>
+              <!-- <th>Direccion</th> -->
               <th>Sucursal</th>
               <th>Vendedor</th>
               <th>Telefono</th>
               <th>Celular</th>
               <th>Email</th>
-              <th colspan="3"></th>
+              <th colspan="" ="3">Acciones</th>
           </tr>
       </thead>
       <tbody>
         <% @proveedores.each do |proveedor| %>
             <tr>
                 <td><%= proveedor.descripcion %></td>
-                <td><%= proveedor.direccion %></td>
+                <!-- <td><%= proveedor.direccion %></td> -->
                 <td><%= proveedor.sucursal %></td>
                 <td><%= proveedor.vendedor %></td>
                 <td><%= proveedor.telefono %></td>
                 <td><%= proveedor.celular %></td>
                 <td><%= proveedor.email %></td>
                 <td><%= link_to 'Show', proveedor %></td>
-                <td><%= link_to 'Edit', edit_proveedor_path(proveedor) %></td>
-                <td><%= link_to 'Destroy', proveedor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                
+
+             <td> <%= link_to edit_proveedor_path(proveedor), class: 'btn btn-warning btn-outline btn-circle', title: 'Editar', 'remote' => true, 'data-toggle' => 'tooltip', 'data-placement' => 'right' do %>
+                <span class="glyphicon glyphicon-pencil"></span>
+              <% end %>
+            </td>
+            <td><%= link_to proveedor, method: :delete, data: { confirm: 'Va eliminarlo, esta seguro?' }, class: 'btn btn-danger btn-outline btn-circle', title: 'Borrar', 'data-toggle' => 'tooltip', 'data-placement' => 'right'  do %>
+              <span class="glyphicon glyphicon-remove"></span>
+            <% end %>
+            </td>
+                <!-- <td><%= link_to 'Destroy', proveedor, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
             </tr>
         <% end %>
       </tbody>

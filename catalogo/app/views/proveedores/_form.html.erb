@@ -1,5 +1,16 @@
 <% remote ||= false %>
-<%= form_for @proveedor,remote: remote , validate: true do |f| %>
+<%= form_for @proveedor, remote: remote , validate: true do |f| %>
+
+  <% if @proveedor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@proveedor.errors.count, "error") %> prohibited this proveedor from being saved:</h2>
+      <ul>
+      <% @proveedor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <div class="row">
     <div class="col-sm-12 col-lg-4">
