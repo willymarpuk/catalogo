@@ -32,7 +32,7 @@ class ModelosController < ApplicationController
         format.html { redirect_to modelos_url }
         format.json { render :show, status: :created, location: @modelo }
       else
-        format.html { redirect_to modelos_url }
+        format.html { redirect_to modelos_url}
         format.json { render json: @modelo.errors, status: :unprocessable_entity }
       end
     end
@@ -55,10 +55,14 @@ class ModelosController < ApplicationController
   # DELETE /modelos/1
   # DELETE /modelos/1.json
   def destroy
-    @modelo.destroy
     respond_to do |format|
-      format.html { redirect_to modelos_url }
-      format.json { head :no_content }
+      if @modelo.destroy
+        format.html { redirect_to modelos_url }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to estados_url, notice: 'No se puede eliminar' }
+        format.json { head :no_content }
+      end
     end
   end
 
